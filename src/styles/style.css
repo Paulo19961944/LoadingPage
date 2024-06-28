@@ -1,0 +1,144 @@
+/*RESET CSS*/
+*{
+    margin: 0; /*Zera a Margem*/
+    padding: 0; /*Zera o Preenchimento*/
+    box-sizing: border-box; /*Ajusta o Box Model (Interno)*/
+}
+
+/*CONTEÚDO DA PÁGINA*/
+body{
+    background-color: #101016; /*Cor de Fundo - Cinza Escuro*/
+    min-height: 100vh; /*Altura Máxima de 100% da Tela*/
+    display: flex; /*Flexbox*/
+    flex-direction: column; /*Alinha em Colunas*/
+    align-items: center; /*Alinha ao Centro no Eixo Perpendicular*/
+    justify-content: center; /*Alinha ao Centro no Eixo Principal*/
+}
+
+/*CONTEÚDO PRINCIPAL*/
+main{
+    display: flex; /*Flexbox*/
+    flex-direction: column; /*Alinha em Colunas*/
+    align-items: center; /*Alinha ao Centro no Eixo Perpendicular*/
+    justify-content: center; /*Alinha ao Centro no Eixo Principal*/
+    color: #f0f0f0; /*Cor Branca*/
+}
+
+/*TÍTULO DA PÁGINA*/
+#loadText{
+    font-size: 2.23rem; /*Tamanho da Fonte de 2.23rem - Aprox: 36px*/
+    font-weight: 300; /*Peso da Fonte*/
+    text-align: center; /*Alinha o Texto ao Centro*/
+    margin-bottom: 48px; /*Margem Inferior de 48px*/
+}
+
+/*CARREGAMENTO DA PÁGINA*/
+#load{
+    animation: rotate 3s ease-in-out infinite; /*Animação de Rotate*/
+    background-color: transparent; /*Cor de Fundo Transparente*/
+    border: 12px solid #12714e; /*Borda de 12px - Verde*/
+    border-top: 12px solid transparent; /*Borda no Topo de 12px - Transparente*/
+    border-radius: 50%; /*Arrendonda a Borda - Circulo*/
+    width: 80px; /*Largura de 80px*/
+    height: 80px; /*Altura de 80px*/
+}
+
+/*PÁGINA DE REFRESH*/
+#refresh{
+    position: relative; /*Posição Relativa*/
+    background-color: #242428; /*Cor de Fundo - Cinza Escuro*/
+    color: #f0f0f0; /*Cor do Texto - Branco*/
+    border-radius: 8px; /*Borda Arredondada*/
+    display: none; /*Esconde o Display*/
+    flex-direction: column; /*Alinha em Colunas*/
+    align-items: center; /*Alinha ao Centro no Eixo Perpendicular*/
+    width: 90vw; /*Largura de 90% da Tela*/
+    max-width: 620px; /*Largura Máxima de 620px*/
+    height: 336px; /*Altura de 336px*/
+}
+
+/*TÍTULO DO REFRESH*/
+#title{
+    font-size: 1.88rem; /*Tamanho da Fonte de 1.88rem - Aprox: 30px*/
+    font-weight: 200; /*Peso da Fonte*/
+    text-align: center; /*Alinha o Texto ao Centro*/
+    color: #f0f0f0; /*Cor do Texto - Branco*/
+    margin-top: 48px; /*Margem Superior de 48px*/
+}
+
+/*BOTÃO DE REFRESH*/
+#refreshBtn{
+    margin-top: 48px; /*Margem Superior de 48px*/
+    font-weight: 300; /*Peso da Fonte*/
+    border: none; /*Esconde a Borda*/
+    border-radius: 4px; /*Arredonda a Borda*/
+    background-color: #12714e; /*Cor de Fundo - Verde*/
+    color: #f0f0f0; /*Cor do Texto - Branco*/
+    width: 144px; /*Largura de 144px*/
+    height: 32px; /*Altura de 32px*/
+}
+
+/*BOTÃO AO PASSAR O MOUSE*/
+#refreshBtn:hover{
+    cursor: pointer; /*Mãozinha no Cursor*/
+    transform: scale(1.03); /*Tamanho de 103%*/
+    transition: ease-out 0.6s; /*Transição suave no final de 0.6s*/
+}
+
+/*TEXTO RODAPÉ*/
+small{
+    position: absolute; /*Posição Absoluta ao Refresh*/
+    bottom: 32px; /*Ajusta a 32px do canto inferior*/
+    font-weight: 200; /*Peso da Fonte*/
+}
+
+/*TEXTOS*/
+#loadText, #title, #refreshBtn, small{
+    font-family: 'Roboto Condensed', sans-serif; /*Fonte do Google*/
+}
+
+/*ESCONDE O ELEMENTO*/
+.hide-element{
+    display: none; /*Esconde o Display*/
+}
+
+/*MOSTRA O ELEMENTO REFRESH*/
+#refresh.show-element{
+    display: flex; /*Flexbox*/
+}
+
+
+/*CELULARES*/
+@media (max-width: 576px){
+    /*TÍTULO DO REFRESH*/
+    #title{
+        font-size: 1.5rem; /*Tamanho da Fonte de 1.5rem - Aprox: 24px*/
+    }   
+
+    /*TEXTO RODAPÉ E BOTÃO*/
+    small, #refreshBtn{
+        font-size: 0.75rem; /*Tamanho da Fonte de 0.75rem - Aprox: 12px*/
+    }
+}
+
+/*FULL HD*/
+@media (min-width: 1920px){
+    /*CONTAINER DO REFRESH*/
+    #refresh{
+        max-width: 768px; /*Largura máxima de 768px*/
+        height: 375px; /*Altura de 375px*/
+    }   
+}
+
+/*ANIMAÇÃO DE ROTATE*/
+@keyframes rotate{
+    /*ESTADO INICIAL*/
+    0%{
+        transform: rotate(0deg); /*Rotaciona 0 grau*/
+    }
+
+    /*ESTADO FINAL*/
+    100%{
+        transform: rotate(360deg); /*Rotaciona 360 graus*/
+    }
+}
